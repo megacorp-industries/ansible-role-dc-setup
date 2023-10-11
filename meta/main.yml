@@ -1,0 +1,11 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: dc-setup
+  author: mi
+  description: A role for configuring a dc on windows
+  company: "Megacorp Industries"
+  min_ansible_version: 2.4
+  galaxy_tags:
+    - server

@@ -1,0 +1,14 @@
+---
+- name: Install chocolatey software
+  win_chocolatey:
+    name:
+      - neovim
+      - git
+      - pwsh
+
+- name: Set reg key for default shell on openssh
+  win_regedit:
+    path: HKLM:\SOFTWARE\OpenSSH
+    name: DefaultShell
+    data: C:\Program Files\PowerShell\7\pwsh.exe
+    type: string

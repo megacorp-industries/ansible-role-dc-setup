@@ -1,0 +1,14 @@
+---
+- name: Set timezone
+  win_timezone:
+    timezone:   AUS Central Standard Time
+
+- name: Set hostname
+  win_hostname:
+    name: "{{ hostname }}"
+  register: result
+
+- name: Reboot after hostname change
+  win_reboot:
+    msg: "Server config in progress; rebooting..."
+  when: result.reboot_required

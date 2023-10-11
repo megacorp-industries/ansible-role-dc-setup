@@ -1,0 +1,15 @@
+---
+- name: Create scripts directory
+  win_file:
+    name: C:\scripts
+    state: directory
+
+- name: Upload scripts
+  win_copy:
+    src: files/enable-rdp.ps1
+    dest: C:\scripts
+
+- name: Upload scripts
+  win_copy:
+    src: files/enable-sshd.ps1
+    dest: C:\scripts

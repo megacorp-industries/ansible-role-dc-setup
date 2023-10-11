@@ -1,0 +1,46 @@
+---
+- name: Create first level OU
+  microsoft.ad.ou:
+    name: "{{ org_code }}"
+    state: present
+  register: company_ou
+
+- name: Create second-level OU's
+  microsoft.ad.ou:
+    name: "{{ item }}"
+    path: "{{ company_ou.distinguished_name }}"
+    state: present
+  with_items:
+  - Accounts
+  - Groups
+  - Computers
+
+- name: Create Accounts sub directories
+  microsoft.ad.ou:
+    name: "{{ item }}"
+    path: "OU=Accounts,{{ company_ou.distinguished_name }}"
+    state: present
+  with_items:
+  - Disabled
+  - Service
+  - Staff
+  - Vendor
+
+- name: Create Groups sub directories
+  microsoft.ad.ou:
+    name: "{{ item }}"
+    path: "OU=Groups,{{ company_ou.distinguished_name }}"
+    state: present
+  with_items:
+  - Drives
+  - Folders
+  - Roles
+
+- name: Create Computers sub directories
+  microsoft.ad.ou:
+    name: "{{ item }}"
+    path: "OU=Computers,{{ company_ou.distinguished_name }}"
+    state: present
+  with_items:
+  - Servers
+  - Workstations

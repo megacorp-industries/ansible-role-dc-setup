@@ -1,0 +1,13 @@
+---
+- name: Configure base settings
+  import_tasks: base-config.yml
+
+- name: Upload scripts
+  import_tasks: upload-scripts.yml
+
+- name: Install choco programs
+  import_tasks: choco.yml
+  when: choco | default(true)
+
+- name: Build AD tree
+  import_tasks: build-ad-tree.yml
