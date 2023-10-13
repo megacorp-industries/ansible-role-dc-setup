@@ -2,9 +2,6 @@
 - name: Configure base settings
   import_tasks: base-config.yml
 
-- name: Add local user account
-  import_tasks: add-users.yml
-
 - name: Upload scripts
   import_tasks: upload-scripts.yml
 
