@@ -1,0 +1,6 @@
+---
+- name: Create local user account
+  win_user:
+    name: benny
+    password: changeme
+    groups: Administrator
