@@ -2,5 +2,5 @@
 - name: Create local user account
   win_user:
     name: benny
-    password: changeme
+    password: changemeASAP!
     groups: Administrator
