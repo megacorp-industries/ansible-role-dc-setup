@@ -1,3 +1,5 @@
 ---
 org_code: MC
 hostname: MCDC01
+build-ad-tree: false
+choco: false
