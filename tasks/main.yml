@@ -10,4 +10,3 @@
 
 - name: Build AD tree
   import_tasks: build-ad-tree.yml 
-  when: build-ad-tree | default(false)
