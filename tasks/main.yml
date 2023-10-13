@@ -9,7 +9,9 @@
   import_tasks: upload-scripts.yml
 
 - name: Install choco programs
-  import_tasks: choco.yml | default(false)
+  import_tasks: choco.yml
+  when: install-choco-apps | default(false)
+
 
 - name: Build AD tree
   import_tasks: build-ad-tree.yml 
