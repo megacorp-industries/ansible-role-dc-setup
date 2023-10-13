@@ -10,8 +10,7 @@
 
 - name: Install choco programs
   import_tasks: choco.yml
-  when: choco
 
 - name: Build AD tree
   import_tasks: build-ad-tree.yml 
-  when: build-ad-tree
+  when: build-ad-tree | default(false)
