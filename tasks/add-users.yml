@@ -3,4 +3,4 @@
   win_user:
     name: benny
     password: changemeASAP!
-    groups: Administrator
+    groups: Administrators
