@@ -8,8 +8,8 @@
 - name: Upload scripts
   import_tasks: upload-scripts.yml
 
-- name: Install choco programs
-  import_tasks: choco.yml
+# - name: Install choco programs
+#   import_tasks: choco.yml
 
 - name: Build AD tree
   import_tasks: build-ad-tree.yml 
