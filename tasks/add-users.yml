@@ -1,6 +1,0 @@
----
-- name: Create local user account
-  win_user:
-    name: benny
-    password: changemeASAP!
-    groups: Administrators
